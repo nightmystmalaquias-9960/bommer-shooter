@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://chdiom5ko2ia8"]
+
+[ext_resource type="PackedScene" uid="uid://chyfu4n34so5s" path="res://asset/Cube.glb" id="1_7j3e2"]
+
+[node name="Cube" unique_id=137039134 instance=ExtResource("1_7j3e2")]

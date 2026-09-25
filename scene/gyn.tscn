@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://du035gg3fon66"]
 
+[ext_resource type="PackedScene" uid="uid://biee55g7iugg6" path="res://scene/breakable_wall.tscn" id="1_5nacg"]
 [ext_resource type="PackedScene" uid="uid://bie3ku6i1fn1q" path="res://scene/player.tscn" id="1_bgu6j"]
 [ext_resource type="PackedScene" uid="uid://b3ks2q0mdbxtf" path="res://scene/balloon.tscn" id="3_cbtax"]
 [ext_resource type="PackedScene" uid="uid://bor25h8tahv3g" path="res://scene/barrel.tscn" id="3_kkyl4"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://beb4oxo5ii43c" path="res://scene/collectable_health.tscn" id="11_fla4i"]
 [ext_resource type="PackedScene" uid="uid://c3tnlh77k5qi1" path="res://scene/game_over_screen.tscn" id="12_3w20u"]
 [ext_resource type="PackedScene" uid="uid://df6ypsuo04kdi" path="res://scene/teleport.tscn" id="13_5jbrp"]
+[ext_resource type="PackedScene" uid="uid://chyfu4n34so5s" path="res://asset/Cube.glb" id="15_jut6g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n5dw3"]
 sky_top_color = Color(0.39535925, 0.33932814, 0.9063459, 1)
@@ -51,6 +53,9 @@ environment = SubResource("Environment_rev0u")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=530899516]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
+
+[node name="BreakableWall" parent="." unique_id=1708890167 instance=ExtResource("1_5nacg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -11)
 
 [node name="Player" parent="." unique_id=2048335322 instance=ExtResource("1_bgu6j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8710313, 0)
@@ -248,6 +253,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.650583, 0.3420881, -7.261
 [node name="Teleport" parent="." unique_id=432691634 instance=ExtResource("13_5jbrp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.324857, 0, -4.470133)
 scene_to_load = "res://scene/level_01.tscn"
+
+[node name="Cube" parent="." unique_id=137039134 instance=ExtResource("15_jut6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 7)
 
 [connection signal="pressed" from="WorldButton" to="WorldButton/GroupSpawnArea" method="start"]
 [connection signal="pressed" from="WorldButton2" to="Door4x4" method="open"]
